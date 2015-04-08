@@ -1,0 +1,20 @@
+This will be a place to keep track of, communicate and change our features views list, etc. And to keep general notes for everyone.
+
+Expected Features:
+Editable cooking recipies
+Comments for each recipe
+History tracking, with date and user who changed it
+Uploadable photos (Maybe on bottom of recipe page)
+Maybe live chat for each recipe?
+
+
+Required Views:
+Home page
+List of recipes page (Maybe on home page)
+Individual Recipe page
+Login/Signup/Logout
+Maybe User Profile page?
+Single Photo page
+
+
+Other Notes:
