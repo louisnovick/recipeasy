@@ -5,6 +5,13 @@
 / Tan: F9CE80
 / Off white: FCEEDD
 ////////////*/
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+
+p {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 1.2em;
+	letter-spacing: 0.3px;
+}
 
 .content {
 	margin-top: 50px;
@@ -28,7 +35,16 @@ body.ng-cloak
 }
 
 .jumbotron {
-	margin: 0px 0px 10px 0px;
+	margin: -50px -20vw 10px -20vw;
+}
+
+.food-title {
+	background: rgba(247,227,102,.8);
+	position: relative;
+	top: -43px;
+	padding: 10px 10px 10px 10px;
+	overflow: hidden;
+
 }
 
 footer {
