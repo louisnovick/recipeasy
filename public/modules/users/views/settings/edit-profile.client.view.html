@@ -1,6 +1,21 @@
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-center">Edit your profile</h3>
-	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+	<h3 class="col-md-12 text-left">Edit your profile</h3>
+
+  	<div class="col-md-4">
+		<img src="//www.placecage.com/gif/200/200" alt ="placeholder avatar">
+		<div class="member-info">
+			<ul class="memberactivity">
+				<li>Nicolas Cage</li>
+				<li>nicolascage1</li>
+				<li>Member Since: June 2014</li>
+
+
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="col-md-8">
 		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
 				<div class="form-group">
@@ -31,4 +46,14 @@
 			</fieldset>
 		</form>
 	</div>
+  </div>
+
+
+
+
+
+
+</div>
+
+	
 </section>
