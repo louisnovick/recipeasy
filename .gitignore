@@ -19,4 +19,5 @@ Thumbs.db
 node_modules/
 .sass-cache/
 
-public/uploads/*
+public/uploads/*.jpg
+public/uploads/*.png
