@@ -5,20 +5,26 @@
 / Tan: F9CE80
 / Off white: FCEEDD
 ////////////*/
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
 	overflow-x: hidden;
 }
 
 p {
-	font-family: 'Varela Round', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 1.2em;
 	letter-spacing: 0.3px;
 }
 
 h1, h2, h3, h4{
-	font-family: 'Novecento Wide', sans-serif;
+	font-family: 'Novecento Wide Medium', sans-serif;
+
+}
+
+span.letter-space{
+	display: inline;
+	margin-left: 2px;
 }
 
 .content {
