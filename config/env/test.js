@@ -1,10 +1,25 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/recipeasy-test',
+	db: {
+		uri: 'mongodb://localhost/mean-test',
+		options: {
+			user: '',
+			pass: ''
+		}
+	},
 	port: 3001,
+	log: {
+		// Can specify one of 'combined', 'common', 'dev', 'short', 'tiny'
+		format: 'dev',
+		// Stream defaults to process.stdout
+		// Uncomment to enable logging to a log on the file system
+		options: {
+			//stream: 'access.log'
+		}
+	},
 	app: {
-		title: 'Recipeasy - Test Environment'
+		title: 'MEAN.JS - Test Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
