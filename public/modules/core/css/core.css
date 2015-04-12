@@ -1,14 +1,15 @@
 /* Colors ////
 / Red: D45C46
-/ Blue: 97E2D0
+/ Blue: B1E2D0
 / Goldish: F7E366
 / Tan: F9CE80
-/ Off white: FCEEDD
+/ Off white: FCF0E3
 ////////////*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
 body {
 	overflow-x: hidden;
+	background-color: #FCF0E3;
 }
 
 p {
@@ -49,18 +50,23 @@ body.ng-cloak
 }
  
 .jumbotron {
-	margin: -50px -20vw 10px -20vw;
+	padding-bottom: 0px; 
+	margin: -50px -20vw 25px -20vw;
 }
 
 .food-title {
 	background: rgba(247,227,102,.8);
 	position: relative;
-	top: -43px;
+	top: -41px;
 	padding: 10px 10px 10px 10px;
 	overflow: hidden;
 
 }
 
 footer {
-
+	height: auto;
+	width: 100vw;
+	background-color: #B1E2D0;
+	margin-top: 30px;
+	padding: 40px;
 }
