@@ -7,6 +7,10 @@
 ////////////*/
 @import url(http://fonts.googleapis.com/css?family=Varela+Round);
 
+body {
+	overflow-x: hidden;
+}
+
 p {
 	font-family: 'Varela Round', sans-serif;
 	font-size: 1.2em;
@@ -33,7 +37,7 @@ body.ng-cloak
 {
 	display: block;
 }
-
+ 
 .jumbotron {
 	margin: -50px -20vw 10px -20vw;
 }
