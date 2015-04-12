@@ -62,7 +62,7 @@ span.letter-space{
 
 
 .content {
-	margin-top: 50px;
+	margin-top: 90px;
 }
 .undecorated-link:hover {
 	text-decoration: none;
@@ -93,7 +93,10 @@ body.ng-cloak
 	top: -41px;
 	padding: 10px 10px 10px 10px;
 	overflow: hidden;
+}
 
+.list-group-item {
+	height: 230px;
 }
 
 footer {
