@@ -1,0 +1,40 @@
+<section data-ng-controller="RecipesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="recipe.name"></h1>
+		<h3>Located in public/modules/recipes/views/view-recipe.client.view.html</h3>
+		<p data-ng-bind="recipe.notes"></p>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == recipe.user._id))">
+		<a class="btn btn-primary" href="/#!/recipes/{{recipe._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<div>
+		<h2>
+			Posted on
+			<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="recipe.user.displayName"></span>
+		</h2>
+		</div>
+		<div>
+		<h2>
+			Likes: <span data-ng-bind="recipe.likes.length-1"></span>
+			Views: <span data-ng-bind="recipe.views"></span>
+		</h2>
+		</div>
+		<div>
+		<h2>
+		
+			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-show="!isLiked && authentication.user._id"><i class="fa fa-heart">Like</i></button>
+			
+		</h2>
+		</div>
+		<div class="page-body">
+			<image ng-src="{{recipe.image}}"/>
+		</div>
+	</div>
+</section>

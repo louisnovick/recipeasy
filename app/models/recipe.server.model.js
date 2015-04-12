@@ -7,13 +7,18 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 /**
- * Photo Schema
+ * Recipe Schema
  */
-var PhotoSchema = new Schema({
+var RecipeSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Photo name',
+		required: 'Please name your recipe',
+		trim: true
+	},
+	notes: {
+		type: String,
+		default: '',
 		trim: true
 	},
     image: {
@@ -38,4 +43,4 @@ var PhotoSchema = new Schema({
 	}]
 });
 
-mongoose.model('Photo', PhotoSchema);
+mongoose.model('Recipe', RecipeSchema);

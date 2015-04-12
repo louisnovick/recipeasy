@@ -5,151 +5,150 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Photo = mongoose.model('Photo'),
+	Recipe = mongoose.model('Recipe'),
 	_ = require('lodash');
 
 /**
- * Create a Photo
+ * Create a Recipe
  */
 exports.create = function(req, res) {
   console.log(req.body);
   console.log(req.files);
-  var photo = new Photo(req.body);
-  photo.user = req.user;
-  photo.likes.push(req.user._id);
+  var recipe = new Recipe(req.body);
+  recipe.user = req.user;
+  recipe.likes.push(req.user._id);
   if(req.files.image) {
-    photo.image =req.files.image.path.substring(7);
-    console.log(photo.image);
+    recipe.image =req.files.image.path.substring(7);
+    console.log(recipe.image);
   }  else
-    photo.image='default.jpg';
-  photo.save(function(err) {
+    recipe.image='default.jpg';
+  recipe.save(function(err) {
     if (err) {
       return res.status(400).send({
 	message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
+      res.redirect('/#!/recipes/'+recipe._id); 
     }
   });
 };
 
 /**
- * Show the current Photo
+ * Show the current Recipe
  */
 exports.read = function(req, res) {
 
-  var photo = req.photo;
-  console.log(photo);
-  //  photo = _.extend(photo , req.body);
-  photo.views += 1;
-  photo.save(function(err) {
+  var recipe = req.recipe;
+  console.log(recipe);
+  recipe.views += 1;
+  recipe.save(function(err) {
     if (err) {
       console.log('Problem'+err);
       return res.status(400).send({
 	message: errorHandler.getErrorMessage(err)
       });
     } else 
-      res.jsonp(photo);
+      res.jsonp(recipe);
   });
 };
 
 
 /**
- * Update a Photo
+ * Update a Recipe
  */
 exports.update = function(req, res) {
-	var photo = req.photo ;
+	var recipe = req.recipe ;
 
-	photo = _.extend(photo , req.body);
+	recipe = _.extend(recipe , req.body);
 
-	photo.save(function(err) {
+	recipe.save(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(photo);
+			res.jsonp(recipe);
 		}
 	});
 };
 
 /**
- * Delete an Photo
+ * Delete an Recipe
  */
 exports.delete = function(req, res) {
-	var photo = req.photo ;
+	var recipe = req.recipe ;
 
-	photo.remove(function(err) {
+	recipe.remove(function(err) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(photo);
+			res.jsonp(recipe);
 		}
 	});
 };
 
 /**
- * List of Photos
+ * List of Recipes
  */
 exports.list = function(req, res) { 
-	Photo.find().sort('-created').populate('user', 'displayName').exec(function(err, photos) {
+	Recipe.find().sort('-created').populate('user', 'displayName').exec(function(err, recipes) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(photos);
+			res.jsonp(recipes);
 		}
 	});
 };
 /**
- * Likes a photo
+ * Likes a recipe
  */
 exports.like = function(req, res) {
   var user = req.user;
   var containsValue = false;
 
   // Determine if user is already in 
-  for(var i=0; i<req.photo.likes.length; i++) {
-    console.log('Comparing ' + req.photo.likes[i] + ' to ' + req.user._id + ' is ' + req.photo.likes[i].equals(req.user._id));
-    if(req.photo.likes[i].equals(req.user._id)) {
+  for(var i=0; i<req.recipe.likes.length; i++) {
+    console.log('Comparing ' + req.recipe.likes[i] + ' to ' + req.user._id + ' is ' + req.recipe.likes[i].equals(req.user._id));
+    if(req.recipe.likes[i].equals(req.user._id)) {
       containsValue = true;
     }
   }
   if(!containsValue) {
-	req.photo.likes.push(req.user._id);
+	req.recipe.likes.push(req.user._id);
   }
-  req.photo.save(function(err) {
+  req.recipe.save(function(err) {
     if (err) {
       return res.status(400).send({
 		message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.jsonp(req.photo);
+      res.jsonp(req.recipe);
 	 }
   });
 };
 
 /**
- * Photo middleware
+ * Recipe middleware
  */
-exports.photoByID = function(req, res, next, id) {
+exports.recipeByID = function(req, res, next, id) {
   console.log('finding by id:'+id);
-	Photo.findById(id).populate('user', 'displayName').exec(function(err, photo) {
+	Recipe.findById(id).populate('user', 'displayName').exec(function(err, recipe) {
 	  if (err) return next(err);
-	  if (! photo) return next(new Error('Failed to load Photo ' + id));
-	  req.photo = photo;
+	  if (! recipe) return next(new Error('Failed to load Recipe ' + id));
+	  req.recipe = recipe;
 	  next();
 	});
 };
 
 /**
- * Photo authorization middleware
+ * Recipe authorization middleware
  */
 exports.hasAuthorization = function(req, res, next) {
-	if (req.photo.user.id !== req.user.id) {
+	if (req.recipe.user.id !== req.user.id) {
 		return res.status(403).send('User is not authorized');
 	}
 	next();
