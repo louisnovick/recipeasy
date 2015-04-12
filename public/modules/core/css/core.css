@@ -1,6 +1,6 @@
 /* Colors ////
 / Red: D45C46
-/ Blue: BAE2E1
+/ Footer green: CEFCB9
 / Goldish: F7E366
 / Tan: F9CE80
 / Off white: FCF0E3
@@ -102,7 +102,7 @@ body.ng-cloak
 footer {
 	height: auto;
 	width: 100vw;
-	background-color: #BAE2E1;
+	background-color: #CEFCB9;
 	margin-top: 30px;
 	padding: 40px;
 }
