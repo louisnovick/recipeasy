@@ -5,21 +5,22 @@
 / Tan: F9CE80
 / Off white: FCF0E3
 ////////////*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 body {
 	overflow-x: hidden;
 	background-color: #FCF0E3;
 }
 
-p {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1.2em;
-	letter-spacing: 0.3px;
+p, body {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.3em;
+	letter-spacing: 0.5px;
 }
 
 h1, h2, h3, h4{
 	font-family: 'Novecento Wide Medium', sans-serif;
+	text-transform: uppercase;
 
 }
 
