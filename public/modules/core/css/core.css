@@ -1,3 +1,11 @@
+/* Colors ////
+/ Red: D45C46
+/ Blue: 97E2D0
+/ Goldish: F7E366
+/ Tan: F9CE80
+/ Off white: FCEEDD
+////////////*/
+
 .content {
 	margin-top: 50px;
 }
@@ -17,4 +25,12 @@
 body.ng-cloak
 {
 	display: block;
+}
+
+.jumbotron {
+	margin: 0px 0px 10px 0px;
+}
+
+footer {
+
 }
