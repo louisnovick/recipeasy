@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'Novecento Wide';
+    src: url('novecentosanswide-normal-webfont.eot');
+    src: url('novecentosanswide-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('novecentosanswide-normal-webfont.woff2') format('woff2'),
+         url('novecentosanswide-normal-webfont.woff') format('woff'),
+         url('novecentosanswide-normal-webfont.ttf') format('truetype'),
+         url('novecentosanswide-normal-webfont.svg#novecento_sans_widenormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -17,6 +17,10 @@ p {
 	letter-spacing: 0.3px;
 }
 
+h1, h2, h3, h4{
+	font-family: 'Novecento Wide', sans-serif;
+}
+
 .content {
 	margin-top: 50px;
 }
