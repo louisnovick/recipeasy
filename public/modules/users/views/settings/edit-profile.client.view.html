@@ -1,13 +1,13 @@
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-left">Edit your profile</h3>
+	<h3 class="col-md-12 text-left h3-header">Edit your profile</h3>
 
-  	<div class="col-md-4">
-		<img src="//www.placecage.com/gif/200/200" alt ="placeholder avatar">
-		<div class="member-info">
-			<ul class="memberactivity">
-				<li>Nicolas Cage</li>
+  	<div class="col-md-3 panel panel-default">
+		<div class="text-center"><img src="//www.placecage.com/gif/200/200" alt ="placeholder avatar"></div>
+		<div class="member-info panel-heading">
+			<ul class="member-activity">
+				<strong><li>Nicolas Cage</li>
 				<li>nicolascage1</li>
-				<li>Member Since: June 2014</li>
+				<li>Member Since: June 2014</li></strong>
 
 
 			</ul>
@@ -15,7 +15,9 @@
 	</div>
 
 
-	<div class="col-md-8">
+
+
+	<div class="col-md-9 ">
 		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
 				<div class="form-group">
@@ -34,8 +36,8 @@
 					<label for="username">Username</label>
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
 				</div>
-				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Save Profile</button>
+				<div class="text-left form-group">
+					<button type="submit" class="btn btn-large btn-success">Save Profile</button>
 				</div>
 				<div data-ng-show="success" class="text-center text-success">
 					<strong>Profile Saved Successfully</strong>

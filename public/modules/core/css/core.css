@@ -44,6 +44,10 @@ span.letter-space{
 
 }
 
+.h3-header{
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
 
 
 .navbar-inverse .navbar-nav > li > a{
@@ -55,7 +59,7 @@ span.letter-space{
 }
 
 #logo{
-	width: 12vw;
+
 	height: auto;
 	margin:-10px 0 0 0;
 
@@ -143,6 +147,29 @@ h1.jumbo{
 	overflow: hidden;
 }
 
+
+
+
+
+
+
+/*Profile*/
+
+ul.member-activity{
+	list-style-type: none;
+	text-align: left;
+	margin: 0;
+}
+
+.panel{
+	padding-top: 25px;
+}
+
+
+
+.panel-heading{
+	width: 200px;
+}
 @media (max-width: 991px) {
 	.image-in-recipe {
 		float: left;
@@ -179,6 +206,9 @@ footer {
 
 		}
 
+		#logo{
+ 			width: 30vw;
+ 		}
  
 	}
  
@@ -186,11 +216,16 @@ footer {
  /* Extra Small Devices, Phones */
 	@media only screen and (min-width : 480px){
 
-			h1.jumbo{
+		h1.jumbo{
 		   	top:150px; 
 		   	font-size: 3.5vw ;
 
 		}
+
+		#logo{
+ 			width: 23vw;
+ 		}
+ 
  
 	}
 
@@ -203,6 +238,11 @@ footer {
 		   	font-size: 3.5vw ;
 
 		}
+
+		#logo{
+ 			width: 18vw;
+ 		}
+ 
 	}
  
 	/* Medium Devices, Desktops */
@@ -212,6 +252,11 @@ footer {
 		   	
 		}
  
+ 		#logo{
+ 			width: 12vw;
+ 		}
+	}
+
 	/* Large Devices, Wide Screens */
 	@media only screen and (min-width : 1200px){
  
