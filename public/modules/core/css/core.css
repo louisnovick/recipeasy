@@ -88,7 +88,14 @@ span.letter-space{
 
 }
 
-
+.badge {
+	position: absolute;
+	top: 0px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.2em;
+	background-color: #56B156;
+	border-radius: 0px;
+}
 
 
 .content {
