@@ -18,7 +18,7 @@ module.exports = {
 		}
 	},
 	app: {
-		title: 'MEAN.JS - Development Environment'
+		title: 'Recip•EZ - Open Source Recipes for the Hungry'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
