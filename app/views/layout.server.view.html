@@ -70,11 +70,35 @@
 	{% endif %}
 
 	<footer>
-		<h3>This is the footer</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.</p>
+		
+		<div class="col-sm-3">
+			<h3>Recipes</h3>
+			<ul>
+				<li><a href="/#!/recipes">List Recipes</a></li>
+				<li><a href="/#!/recipes/create">New Recipe</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-3">
+			<h3>User</h3>
+				<ul>
+					<li><a href="/#!/signin">Sign In</a></li>
+					<li><a href="/#!/signup">Sign Up</a></li>
+					<li><a href="/auth/signout">Sign Out</a></li>
+				</ul>
+		</div>
+		<div class="col-sm-3">
+			<h3>Manage User</h3>
+				<ul>
+					<li><a href="/#!/settings/accounts">Manage Social Accounts</a></li>
+					<li><a href="/#!/settings/password">Change Password</a></li>
+					<li><a href="/#!/settings/profile">Edit Profile</a></li>
+				</ul>
+		</div>
+		<div class="col-sm-3 top-space">
+			<a href="/#!/"><img id="logo" class="img-responsive" src="modules/core/img/brand/logo.png"></a>
+			<p class="">&copy; 2015</h4>
+		</div>
+
 	</footer>
 
 	<!--[if lt IE 9]>

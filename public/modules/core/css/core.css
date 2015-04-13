@@ -23,12 +23,35 @@ p, body {
 	letter-spacing: 0.5px;
 }
 
+a {
+	text-decoration: none;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.1em;
+	letter-spacing: 0.5px;
+	color: #777;
+}
+
 h1, h2, h3, h4{
 	font-family: 'Novecento Wide Medium', sans-serif;
 	text-transform: uppercase;
 
 }
 
+ul {
+	list-style: none;
+}
+
+hr {
+	clear: both;
+}
+
+.hidden {
+	display: none; 
+}
+
+.top-space {
+	top: 20px
+}
 
 span.letter-space{
 	display: inline;
@@ -178,10 +201,25 @@ hr.hidden{
 	}
 }
 
+.all-comments {
+	padding-top: 20px;
+}
+
+.single-comments {
+	padding: 30px;
+	position: relative;
+	left: 3%;
+	background-color: #FCFAF4;
+	height: auto;
+	min-height: 260px;
+	border-radius: 2px;
+}
+
 footer {
 	height: auto;
+	min-height: 210px;
 	width: 100vw;
-	background-color: #D5FCBF;
+	background: rgba(247,227,102,.3);
 	margin-top: 50px;
 	padding: 40px;
 }
@@ -241,6 +279,7 @@ footer {
 		   	top: 40vh; 
 		   	
 		}
+	}
  
  		#logo{
  			width: 12vw;
