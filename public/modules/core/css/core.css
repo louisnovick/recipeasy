@@ -155,21 +155,11 @@ h1.jumbo{
 
 /*Profile*/
 
-ul.member-activity{
-	list-style-type: none;
-	text-align: left;
-	margin: 0;
-}
-
-.panel{
-	padding-top: 25px;
+hr.hidden{
+	
 }
 
 
-
-.panel-heading{
-	width: 200px;
-}
 @media (max-width: 991px) {
 	.image-in-recipe {
 		float: left;

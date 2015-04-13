@@ -1,44 +1,64 @@
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-left h3-header">Edit your profile</h3>
+	
 
-  	<div class="col-md-3 panel panel-default">
-		<div class="text-center"><img src="//www.placecage.com/gif/200/200" alt ="placeholder avatar"></div>
-		<div class="member-info panel-heading">
-			<ul class="member-activity">
-				<strong><li>Nicolas Cage</li>
-				<li>nicolascage1</li>
-				<li>Member Since: June 2014</li></strong>
+<div class="container">
+    <h1>Edit Profile</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//www.placecage.com/gif/200/200" alt ="placeholder avatar">
+          <h6>Upload a different photo...</h6>
+          
+          <input type="file" class="form-control">
+        </div>
+      </div>
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
 
 
-			</ul>
-		</div>
-	</div>
-
-
-
-
-	<div class="col-md-9 ">
-		<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
+        
+        <form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal" autocomplete="off">
 			<fieldset>
 				<div class="form-group">
-					<label for="firstName">First Name</label>
-					<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+					<label class="col-md-3 control-label" for="firstName">First Name</label>
+					<div class="col-md-8">
+						<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="First Name">
+					</div>
 				</div>
 				<div class="form-group">
-					<label for="lastName">Last Name</label>
-					<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+					<label class="col-md-3 control-label" for="lastName">Last Name</label>
+					<div class="col-md-8">
+						<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="Last Name">
+					</div>
 				</div>
 				<div class="form-group">
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+					<label class="col-md-3 control-label" for="email">Email</label>
+					<div class="col-md-8">
+						<input type="email" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="Email">
+					</div>
 				</div>
 				<div class="form-group">
-					<label for="username">Username</label>
-					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+					<label class="col-md-3 control-label" for="username">Username</label>
+					<div class="col-md-8">
+						<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
+					</div>
 				</div>
-				<div class="text-left form-group">
-					<button type="submit" class="btn btn-large btn-success">Save Profile</button>
-				</div>
+			
+
+
+          	<div class="form-group">
+          		<label class="col-md-3 control-label"></label>
+				<div class="col-md-8">
+		              <input type="button" class="btn btn-success" value="Save Profile">
+		              <span></span>
+		              <input type="reset" class="btn btn-default" value="Cancel">
+            	</div>
+            </div>
+
+
 				<div data-ng-show="success" class="text-center text-success">
 					<strong>Profile Saved Successfully</strong>
 				</div>
@@ -47,15 +67,14 @@
 				</div>
 			</fieldset>
 		</form>
-	</div>
-  </div>
 
 
+      </div><!--/personal info-->
+  </div><!--/row-->
+</div><!--container-->
+<hr>
 
 
-
-
-</div>
 
 	
 </section>
