@@ -18,7 +18,7 @@
 		</a>
 	</div>
 	<h3 class="col-md-12 text-center">Or with your email</h3>
-	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
+	<div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-5">
 		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
 			<fieldset>
 				<div class="form-group">
@@ -40,6 +40,14 @@
 				<div class="form-group">
 					<label for="password">Password</label>
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<label>Male</label><input type="radio" id="male" name="gender" value="male" class="form-control" data-ng-model="credentials.gender">
+					<label>Female</label><input type="radio" id="female" name="gender" class="form-control" value="female" data-ng-model="credentials.gender">
+				</div>
+				<div class="form-group">
+					<label for="exp">Tell us about your cooking experience!</label>
+					<textarea id="exp" name="experience" class="form-control" data-ng-model="credentials.experience" placeholder="I am a master chef!"></textarea>
 				</div>
 				<div class="text-center form-group">
 					<button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
