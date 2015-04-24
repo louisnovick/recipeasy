@@ -4,7 +4,7 @@
 	<!--
 		<h3>Located in public/modules/recipes/views/view-recipe.client.view.html</h3>
 	-->
-		<p data-ng-bind="recipe.notes"></p>
+		<p data-ng-bind="recipe.content"></p>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == recipe.user._id))">
 		<a class="btn btn-success" href="/#!/recipes/{{recipe._id}}/edit">
@@ -24,7 +24,8 @@
 		</div>
 		<div>
 		<h2>
-			Likes: <span data-ng-bind="recipe.views"></span>
+			Views: <span data-ng-bind="recipe.views"></span>
+			Likes: <span data-ng-bind="recipe.likes.length-1"></span>
 		</h2>
 		</div>
 		<div>

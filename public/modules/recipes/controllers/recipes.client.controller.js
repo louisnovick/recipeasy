@@ -12,14 +12,14 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 	    // Create new Recipe object
 	    var recipe = new Recipes ({
 	      name: this.name,
-	      notes: this.notes
+	      notes: this.content
 	    });
 	    recipe.$save(function(response) {
 	      $location.path('recipes/' + response._id);
 
 	      // Clear form fields
 	      $scope.name = '';
-	      //$scope.notes = '';
+	      $scope.content = '';
 
               $scope.image = '';
 	    }, function(errorResponse) {

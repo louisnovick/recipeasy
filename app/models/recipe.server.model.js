@@ -16,7 +16,7 @@ var RecipeSchema = new Schema({
 		required: 'Please name your recipe',
 		trim: true
 	},
-	notes: {
+	content: {
 		type: String,
 		default: '',
 		trim: true
