@@ -12,25 +12,52 @@ var mongoose = require('mongoose'),
  * Create a Recipe
  */
 exports.create = function(req, res) {
-  console.log(req.body);
-  console.log(req.files);
-  var recipe = new Recipe(req.body);
-  recipe.user = req.user;
-  recipe.likes.push(req.user._id);
-  if(req.files.image) {
-    recipe.image =req.files.image.path.substring(7);
-    console.log(recipe.image);
-  }  else
-    recipe.image='default.jpg';
-  recipe.save(function(err) {
-    if (err) {
-      return res.status(400).send({
-	message: errorHandler.getErrorMessage(err)
-      });
-    } else {
-      res.redirect('/#!/recipes/'+recipe._id); 
-    }
-  });
+
+	console.log(req.body);
+	console.log(req.files);
+	var recipe = new Recipe(req.body);
+	recipe.user = req.user;
+	recipe.likes.push(req.user._id);
+	if(req.files.image) {
+		recipe.image =req.files.image.path.substring(7);
+		console.log(recipe.image);
+	}  else
+		recipe.image='default.jpg';
+	
+	var makeId = function() {
+		//info for creating a unique identifier
+		var possible = 'abcdefghijklmnopqrstuvwxyz0123456789',
+			tempId = '';
+		//generates the id
+	    for(var i=0; i < 6; i+=1) {
+	        tempId += possible.charAt(Math.floor(Math.random() * possible.length));
+	    }
+	    console.log("tempId before DB look: "+tempId);
+		//checks to see if there's a recipe with this id
+		Recipe.find({ recipeId: tempId }, function(err, recipes) {
+			if (recipes.length > 0) {
+				//if there's a match, make a different name
+				makeId();
+			} else {
+				//If it is unique, sets it as recipe ID
+				recipe.recipeId=tempId;
+				console.log("tempId after DB "+tempId);
+				console.log("RecipeId after DB "+recipe.recipeId);
+				console.log(recipe);
+				//Saves recipe to DB
+				recipe.save(function(err) {
+					if (err) {
+						return res.status(400).send({
+							message: errorHandler.getErrorMessage(err)
+						});
+					} else {
+			  			res.redirect('/#!/recipes/'+recipe._id); 
+					}
+				});
+			}
+		});
+	};
+	makeId();
 };
 
 /**

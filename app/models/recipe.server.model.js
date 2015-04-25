@@ -10,6 +10,10 @@ var mongoose = require('mongoose'),
  * Recipe Schema
  */
 var RecipeSchema = new Schema({
+	recipeId: {
+		type: String,
+		default: ''
+	},
 	name: {
 		type: String,
 		default: '',
