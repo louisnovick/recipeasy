@@ -1,10 +1,7 @@
 <section data-ng-controller="RecipesController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="recipe.name"></h1>
-	<!--
-		<h3>Located in public/modules/recipes/views/view-recipe.client.view.html</h3>
-	-->
-		<p data-ng-bind="recipe.content"></p>
+		<p>by <span data-ng-bind="recipe.user.displayName"></span></p>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == recipe.user._id))">
 		<a class="btn btn-success" href="/#!/recipes/{{recipe._id}}/edit">
@@ -15,46 +12,31 @@
 		</a>
 	</div>
 	<div>
-		<h2>
-			Added on
-			<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
-			by
-			<span data-ng-bind="recipe.user.displayName"></span>
-		</h2>
-		</div>
+
 		<div>
-		<h2>
-			Views: <span data-ng-bind="recipe.views"></span>
-			Likes: <span data-ng-bind="recipe.likes.length-1"></span>
-		</h2>
+			<h2>
+				Score: <span data-ng-bind="recipe.score"></span>
+				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Good</i></button>
+				<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Bad</i></button>
+			</h2>
 		</div>
-		<div>
-		<h2>
-		
-			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-show="!isLiked && authentication.user._id"><i class="fa fa-heart">Like</i></button>
-			
-		</h2>
-		</div>
-		<div class="page-body">
+		<div class="page-body" style="padding-bottom:400px;">
 			<div class="image-in-recipe">
 				<image ng-src="{{recipe.image}}" class="img-responsive"/>
-				<p class="prep-time">Prep Time: 10 minutes</p>
-				<p class="cook-time">Cook Time: 20 minutes</p>
+				<p>
+					Added on
+						<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
+					by
+						<span data-ng-bind="recipe.user.displayName"></span>
+				</p>
 			</div>
+			
+			<p data-ng-bind="recipe.content"></p>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. 
-				Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. <br/>Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Added on
+				<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
+			by
+				<span data-ng-bind="recipe.user.displayName"></span>
 			</p>
 		</div>
 

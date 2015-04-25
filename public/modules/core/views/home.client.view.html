@@ -13,21 +13,21 @@
 	<div class="section">
 		<div class="row">
 			<h2>Trending</h2>
-			<a data-ng-repeat="recipe in recipes | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
+			<a data-ng-repeat="recipe in recipes | orderBy:'-score' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
 				<div class="col-sm-4">
 						<img src="{{recipe.image}}" class="img-responsive" alt="Responsive image">
 						<p class="food-title">{{recipe.name}}</p>
-						<span class="badge">{{recipe.views}}</span>
+						<span class="badge">{{recipe.score}}</span>
 				</div>
 			</a>
 		</div>
 		<div class="row">
 			<h2>Latest</h2>
-			<a data-ng-repeat="recipe in recipes | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
+			<a data-ng-repeat="recipe in recipes | orderBy:'-created' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
 			<div class="col-sm-4">
 				<img src="{{recipe.image}}" class="img-responsive" alt="Responsive image">
 				<p class="food-title">{{recipe.name}}</p>
-				<span class="badge">{{recipe.views}}</span>
+				<span class="badge">{{recipe.score}}</span>
 			</div>
 		</div>
 	</div>

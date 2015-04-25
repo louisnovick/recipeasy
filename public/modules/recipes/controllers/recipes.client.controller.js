@@ -61,6 +61,11 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 	    $scope.recipes = Recipes.query();
 	  };
 
+	  $scope.homeFind = function() {
+	    $scope.recipes = Recipes.query();
+	    //$scope.latestRecipes = Recipes.query();
+	  };
+
 	  // Find existing Recipe
 	  $scope.findOne = function() {
             console.log('Finding one:' + $stateParams.recipeId);
@@ -83,15 +88,29 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 
 	  };
           
-	  //Like a recipe
+	  //Upvote a recipe
 	  $scope.likeThis = function() {
 	    var recipe = $scope.recipe;
 	    $http.put('recipes/like/' + recipe._id).success(function() {
               // Update the recipe with our user ID.
               recipe.likes.push($scope.authentication.user._id);
               
+              $scope.recipe.score++;
               $scope.isLiked=true;
 	    });
 
-         };   
-        }]);
+	  };   
+
+	   //Downvote a recipe
+	  $scope.dislikeThis = function() {
+	    var recipe = $scope.recipe;
+	    $http.put('recipes/dislike/' + recipe._id).success(function() {
+              // Update the recipe with our user ID.
+              recipe.likes.push($scope.authentication.user._id);
+              
+              $scope.recipe.score--;
+              $scope.isLiked=true;
+	    });
+
+	  };  
+}]);

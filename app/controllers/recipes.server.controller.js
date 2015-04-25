@@ -120,7 +120,7 @@ exports.delete = function(req, res) {
  * List of Recipes
  */
 exports.list = function(req, res) { 
-	Recipe.find().sort('-created').populate('user', 'displayName').exec(function(err, recipes) {
+	Recipe.find().sort('-score').populate('user', 'displayName').exec(function(err, recipes) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -146,6 +146,36 @@ exports.like = function(req, res) {
   }
   if(!containsValue) {
 	req.recipe.likes.push(req.user._id);
+	req.recipe.score++;
+  }
+  req.recipe.save(function(err) {
+    if (err) {
+      return res.status(400).send({
+		message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(req.recipe);
+	 }
+  });
+};
+
+/**
+ * Likes a recipe
+ */
+exports.dislike = function(req, res) {
+  var user = req.user;
+  var containsValue = false;
+
+  // Determine if user is already in 
+  for(var i=0; i<req.recipe.likes.length; i++) {
+    console.log('Comparing ' + req.recipe.likes[i] + ' to ' + req.user._id + ' is ' + req.recipe.likes[i].equals(req.user._id));
+    if(req.recipe.likes[i].equals(req.user._id)) {
+      containsValue = true;
+    }
+  }
+  if(!containsValue) {
+	req.recipe.likes.push(req.user._id);
+	req.recipe.score--;
   }
   req.recipe.save(function(err) {
     if (err) {

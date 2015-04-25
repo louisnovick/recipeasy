@@ -18,6 +18,10 @@ module.exports = function(app) {
 	//adds a route for likes
 	app.route('/recipes/like/:recipeId')
         .put(users.requiresLogin, recipes.like);
+
+   	//adds a route for likes
+	app.route('/recipes/dislike/:recipeId')
+        .put(users.requiresLogin, recipes.dislike);
   
 	// Finish by binding the Recipe middleware
 	app.param('recipeId', recipes.recipeByID);

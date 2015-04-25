@@ -37,9 +37,9 @@ var RecipeSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	views: {
+	score: {
 		type: Number,
-		default: 0
+		default: 1
 	},
 	likes: [{
 	  type: Schema.ObjectId,
