@@ -1,9 +1,7 @@
 <section data-ng-controller="RecipesController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="recipe.name"></h1>
-	<!--
 		<h3>Located in public/modules/recipes/views/view-recipe.client.view.html</h3>
-	-->
 		<p data-ng-bind="recipe.notes"></p>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == recipe.user._id))">
