@@ -1,14 +1,28 @@
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+'use strict';
 
+/**
+ * Module dependencies.
+ */
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema;
+
+/**
+ * Comment Schema
+ */
 var CommentSchema = new Schema({
-	recipeId: { type: String },
-	comment: { type: String },
+	recipeId:{},
+	comment: {
+		type: String,
+		default: '',
+	},
+	created: {
+		type: Date,
+		default: Date.now
+	},
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
-	},
-	timestamp: { type: Date, 'default': Date.now }
+	}
 });
 
-module.exports = mongoose.model('Comment', CommentSchema);
+mongoose.model('Comment', CommentSchema);
