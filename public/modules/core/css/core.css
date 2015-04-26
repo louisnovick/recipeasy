@@ -220,20 +220,11 @@ h1.jumbo span{
 	overflow: hidden;
 }
 
-.voting {
-	position: relative;
-	top: -42px;
-}
 
-.thumb {
-	float: left;
-	width: 65px;
-}
 
-.thumb-down {
-	float: right;
-	width: 65px;
-}
+
+
+
 
 /*Profile*/
 
@@ -261,7 +252,6 @@ hr.hidden{
 }
 
 .all-comments {
-	clear: both;
 	padding-top: 20px;
 }
 
