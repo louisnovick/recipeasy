@@ -24,12 +24,24 @@ p, body {
 }
 
 a {
-	text-decoration: none;
 	font-family: 'Raleway', sans-serif;
 	font-size: 1.1em;
 	letter-spacing: 0.5px;
 	color: #777;
+	-webkit-transition: color 0.2s ease-out ;
+    	-moz-transition: color 0.2s ease-out ;
+    	-o-transition: color 0.2s ease-out ;
+    	transition: color 0.2s ease-out ;
 }
+
+a:hover{
+	cursor: pointer;
+	color: black;
+	text-decoration: none;
+
+}
+
+
 
 h1, h2, h3, h4{
 	font-family: 'Novecento Wide Medium', sans-serif;
@@ -55,7 +67,7 @@ hr {
 
 span.letter-space{
 	display: inline;
-	margin-left: 3px;
+	margin-left: 2.8px;
 }
 
 .navbar{
@@ -67,14 +79,30 @@ span.letter-space{
 
 }
 
+/*Just added*/
+.navbar-inverse .navbar-toggle{
+	border: 0px solid;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: #FCF0E3;
+}
+
+.navbar-inverse .navbar-nav > li > a:active{
+	text-decoration: none;
+}
+
+
 .h3-header{
 	margin-bottom: 50px;
 	margin-top: 50px;
 }
 
 
-.navbar-inverse .navbar-nav > li > a{
-	color: #fff;
+
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+	color: black;
 }
 
 .navbar-inverse{
@@ -120,14 +148,11 @@ body.ng-cloak
 }
  
 .jumbotron {
-	padding-bottom: 0px; 
-	margin: -50px -20vw 25px -20vw;
-	/*background:
-      linear-gradient(
-          rgba(0, 0, 0, 0.9), 
-          rgba(0, 0, 0, 0.9)
-        );*/
+	background-image: url("http://lorempixel.com/1920/400/food/");
+	max-height: 500px;
+	min-height: 200px;
 }
+
 
 h1.jumbo{
 	color: #fff;
@@ -224,11 +249,19 @@ hr.hidden{
 
 footer {
 	height: auto;
-	min-height: 210px;
+	min-height: 260px;
 	width: 100vw;
 	background: rgba(247,227,102,.3);
 	margin-top: 50px;
 	padding: 40px;
+}
+
+footer a{
+	color: #777;
+}
+
+footer a:hover{
+	color: #D45C46;
 }
 
 
@@ -236,14 +269,19 @@ footer {
 	@media only screen and (min-width : 320px){
 
   		h1.jumbo{
-		   	top: 15vh; 
-		   	font-size: 5vw ;
-
+			top: 20vh; 
+		   	font-size: 6.5vw ;
 		}
 
 		#logo{
- 			width: 30vw;
+ 			width: 5em;
+ 			padding: 5px 0 0 0;
  		}
+
+ 		.jumbotron {
+			max-height: 300px;
+		}
+
  
 	}
  
@@ -252,48 +290,83 @@ footer {
 	@media only screen and (min-width : 480px){
 
 		h1.jumbo{
-		   	top:150px; 
-		   	font-size: 3.5vw ;
+			top:22vh; 
+		   	font-size: 6.5vw ;
+		} 
 
+ 		.jumbotron {
+			height: 300px;
 		}
 
-		#logo{
- 			width: 23vw;
- 		}
- 
- 
+		.food-title {
+			background: rgba(247,227,102,.8);
+			padding: 10px 10px 10px 10px;
+			overflow: hidden;
+			max-width: 420px;
+		}
+
+
 	}
 
  
 	/* Small Devices, Tablets */
+
+	@media only screen and (max-width : 768px){
+
+		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+			color: #FCF0E3;
+		}
+
+		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+			color: black;
+		}
+
+	}
+
 	@media only screen and (min-width : 768px){
  
   		h1.jumbo{
-		   	top: 35vh; 
+		   	top: 23vh; 
 		   	font-size: 3.5vw ;
 
 		}
 
 		#logo{
- 			width: 18vw;
+ 			width: 7em;
+ 			padding: 5px 0 0 0;
  		}
+
+ 		.jumbotron {
+			height: 400px;
+		}
+
+		.food-title {
+			background: rgba(247,227,102,.8);
+			padding: 10px 10px 10px 10px;
+			overflow: hidden;
+			max-width: 100%;
+		}
+
  
 	}
  
 	/* Medium Devices, Desktops */
 	@media only screen and (min-width : 992px){
 		 h1.jumbo{
-		   	top: 40vh; 
-		   	
+		   	top: 25vh; 
 		}
+
+		.jumbotron {
+			height: 500px;
+			max-height: 400px;
+		}
+
 	}
  
- 		#logo{
- 			width: 12vw;
- 		}
-	}
+ 
 
 	/* Large Devices, Wide Screens */
 	@media only screen and (min-width : 1200px){
  
+
 	}
