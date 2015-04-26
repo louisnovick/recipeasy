@@ -61,11 +61,6 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 	    $scope.recipes = Recipes.query();
 	  };
 
-	  $scope.homeFind = function() {
-	    $scope.recipes = Recipes.query();
-	    //$scope.latestRecipes = Recipes.query();
-	  };
-
 	  // Find existing Recipe
 	  $scope.findOne = function() {
             console.log('Finding one:' + $stateParams.recipeId);
