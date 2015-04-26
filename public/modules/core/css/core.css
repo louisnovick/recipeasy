@@ -106,9 +106,6 @@ span.icon-bar{
 	color: #FCF0E3;
 }
 
-.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
-	color: #FCF0E3;
-}
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
 	color: black;
@@ -341,7 +338,10 @@ footer a:hover{
 			padding: 5px 0px 0 10px;
 		}
 
-	
+		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+			color: #FCF0E3;
+		}
+
 	}
 
 
@@ -384,8 +384,9 @@ footer a:hover{
 			max-width: 100%;
 		}
 
-		
- 	
+		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+			color: black;
+		}
  
 	}
  
