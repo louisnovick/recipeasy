@@ -1,5 +1,5 @@
 /* Colors ////
-/ Red: D45C46|C65344
+/ Red: D45C46|C65344 {darker}
 / Footer green: CEFCB9
 / Goldish: F7E366
 / Tan: F9CE80
@@ -85,6 +85,14 @@ span.letter-space{
 	margin-left: 3px;
 }
 
+/*Nav - Header*/
+#logo{
+
+	height: auto;
+	margin:-10px 0 0 0;
+
+}
+
 .navbar{
 	background: #D45C46!important;
 	-webkit-box-shadow: 0 5px 6px -7px #000;
@@ -101,11 +109,9 @@ span.icon-bar{
 	margin-top: 50px;
 }
 
-
 .navbar-inverse .navbar-nav > li > a{
 	color: #FCF0E3;
 }
-
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
 	color: black;
@@ -116,24 +122,15 @@ span.icon-bar{
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-
-
 	border-color:#C65344;
 }
+
 .navbar-inverse .navbar-toggle{
 	border-color: transparent!important;
 }
 
-
 .navbar-inverse{
 	border: transparent;
-}
-
-#logo{
-
-	height: auto;
-	margin:-10px 0 0 0;
-
 }
 
 .badge {
@@ -144,7 +141,6 @@ span.icon-bar{
 	background-color: #56B156;
 	border-radius: 0px;
 }
-
 
 .content {
 	margin-top: 80px;
@@ -166,7 +162,6 @@ body.ng-cloak
 {
 	display: block;
 }
-
 
 h1.jumbo{
 	color: rgba(255,255,255,0.9);
@@ -233,6 +228,20 @@ hr.hidden{
 }
 
 
+.all-comments {
+	padding-top: 20px;
+}
+
+.single-comments {
+	padding: 30px;
+	position: relative;
+	left: 3%;
+	background-color: #FCFAF4;
+	height: auto;
+	min-height: 260px;
+	border-radius: 2px;
+}
+
 @media (max-width: 991px) {
 	.image-in-recipe {
 		float: left;
@@ -251,20 +260,6 @@ hr.hidden{
 	}
 }
 
-.all-comments {
-	padding-top: 20px;
-}
-
-.single-comments {
-	padding: 30px;
-	position: relative;
-	left: 3%;
-	background-color: #FCFAF4;
-	height: auto;
-	min-height: 260px;
-	border-radius: 2px;
-}
-
 footer {
 	height: auto;
 	min-height: 260px;
@@ -275,138 +270,126 @@ footer {
 }
 
 
-footer a{
-
-}
-
 footer a:hover{
 	color: #D45C46;
 }
 
-	/* Custom, iPhone Retina */
-	@media only screen and (min-width : 320px){
+ /* Extra Small Devices */
+@media only screen and (min-width : 320px){
+	h1.jumbo{
+		top: 7em; 
+		font-size: 7vw ;
 
-  		h1.jumbo{
-		   	top: 7em; 
-		   	font-size: 7vw ;
-
-		}
-
-		.jumbotron {
-			max-height: 300px;
-		}
-		#logo{
-  			width: 7em;
- 			padding: 7px 0 0 0;
-  		}
- 
-	}
- 
-
- /* Extra Small Devices, Phones */
-	@media only screen and (min-width : 480px){
-		h1.jumbo{
-		   	top: 200px; 
-		}
-		
-
-		.jumbotron {
-			height: 300px;
-		}
- 
- 		.food-title {
-			background: rgba(247,227,102,.8);
-			padding: 10px 10px 10px 10px;
-			overflow: hidden;
-			max-width: 420px;
-		}
- 
-	}
-
- 
-	/* Small Devices, Tablets */
-
-
-	@media only screen and (max-width : 768px){
-
-		.navbar{
-			background: #D45C46;
-			padding: 10px 0 10px 0;
-		}
-
-		.navbar #logo{
-			padding: 5px 0px 0 10px;
-		}
-
-		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
-			color: #FCF0E3;
-		}
-
-	}
-
-
-	@media only screen and (max-width : 840px){
-
-		.padding-Body{
-			margin:0 auto;
-			display: block;
-
-		}
-	}
-	@media only screen and (min-width : 768px){
- 
-  		h1.jumbo{
-		   	top: 35vh; 
-		   	font-size: 3.5vw ;
-
-		}
-
-
-		.navbar{
-			background: #D45C46;
-			padding: 10px;
-		}
-
-		#logo{
-  			width: 7em;
- 			padding: 7px 0 0 0;
-  		}
-
-
-		.jumbotron {
-			height: 400px;
-		}
-
-		.food-title {
-			background: rgba(247,227,102,.8);
-			padding: 10px 10px 10px 10px;
-			overflow: hidden;
-			max-width: 100%;
-		}
-
-		.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
-			color: black;
-		}
- 
-	}
- 
-	/* Medium Devices, Desktops */
-	@media only screen and (min-width : 992px){
-		 h1.jumbo{
-		   	top: 30vh; 
-		   	
-		}
 	}
 
 	.jumbotron {
-			height: 500px;
-			max-height: 400px;
-		}
+		max-height: 300px;
+	}
+	#logo{
+  		width: 7em;
+ 		padding: 7px 0 0 0;
+  	}
+}
  
- 		
+
+@media only screen and (min-width : 480px){
+	h1.jumbo{
+		top: 200px; 
+	}
+		
+
+	.jumbotron {
+		height: 300px;
+	}
+ 
+ 	.food-title {
+		background: rgba(247,227,102,.8);
+		padding: 10px 10px 10px 10px;
+		overflow: hidden;
+		max-width: 420px;
+	}
+ 
+}
+
+ /* Small Devices, Tablets */
+
+@media only screen and (max-width : 768px){
+
+	.navbar{
+		background: #D45C46;
+		padding: 10px 0 10px 0;
 	}
 
-	/* Large Devices, Wide Screens */
-	@media only screen and (min-width : 1200px){
-	
+	.navbar #logo{
+		padding: 5px 0px 0 10px;
 	}
+
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+		color: #FCF0E3;
+	}
+}
+
+
+@media only screen and (max-width : 840px){
+
+	.padding-Body{
+		margin:0 auto;
+		display: block;
+	}
+}
+@media only screen and (min-width : 768px){
+
+  	h1.jumbo{
+		top: 35vh; 
+		font-size: 3.5vw ;
+
+	}
+
+
+	.navbar{
+		background: #D45C46;
+		padding: 10px;
+	}
+
+	#logo{
+  		width: 7em;
+ 		padding: 7px 0 0 0;
+  	}
+
+
+	.jumbotron {
+		height: 400px;
+	}
+
+	.food-title {
+		background: rgba(247,227,102,.8);
+		padding: 10px 10px 10px 10px;
+		overflow: hidden;
+		max-width: 100%;
+	}
+
+	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+		color: black;
+	}
+ 
+}
+ 
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+	h1.jumbo{
+		top: 30vh; 	   	
+	}
+}
+
+	.jumbotron {
+		height: 500px;
+		max-height: 400px;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+	
+
+
+}
