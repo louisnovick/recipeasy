@@ -4,7 +4,6 @@
 / Goldish: F7E366
 / Tan: F9CE80
 / Off white: FCF0E3
-
 Shadow:-webkit-box-shadow: 0 5px 6px -6px #999;
        -moz-box-shadow: 0 5px 6px -6px #999;
             box-shadow: 0 5px 6px -6px #999;
@@ -29,8 +28,19 @@ a {
 	font-size: 1.1em;
 	letter-spacing: 0.5px;
 	color: #777;
+
+	-webkit-transition: color 550ms ease-out;
+    -moz-transition: color 550ms ease-out;
+    -o-transition: color  550ms ease-out;
+    transition: color  550ms ease-out;
 }
 
+a:hover{
+	cursor: pointer;
+	color: black ;
+	text-decoration: none;
+
+}
 h1, h2, h3, h4{
 	font-family: 'Novecento Wide Medium', sans-serif;
 	text-transform: uppercase;
@@ -66,7 +76,6 @@ span.letter-space{
 
 .navbar{
 	background: #D45C46;
-	padding: 15px 0 15px 0;
 	-webkit-box-shadow: 0 5px 6px -6px #999;
        -moz-box-shadow: 0 5px 6px -6px #999;
             box-shadow: 0 5px 6px -6px #999;
@@ -80,8 +89,21 @@ span.letter-space{
 
 
 .navbar-inverse .navbar-nav > li > a{
-	color: #fff;
+	color: #FCF0E3;
 }
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
+	color: #FCF0E3;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover{
+	color: black;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	border-color: #F7E366;
+}
+
 
 .navbar-inverse{
 	border: transparent;
@@ -238,6 +260,14 @@ footer {
 }
 
 
+footer a{
+
+}
+
+footer a:hover{
+	color: #D45C46;
+}
+
 	/* Custom, iPhone Retina */
 	@media only screen and (min-width : 320px){
 
@@ -250,10 +280,10 @@ footer {
 		.jumbotron {
 			max-height: 300px;
 		}
-
 		#logo{
- 			width: 30vw;
- 		}
+  			width: 7em;
+ 			padding: 7px 0 0 0;
+  		}
  
 	}
  
@@ -270,10 +300,6 @@ footer {
 		.jumbotron {
 			height: 300px;
 		}
-
-		#logo{
- 			width: 23vw;
- 		}
  
  		.food-title {
 			background: rgba(247,227,102,.8);
@@ -286,6 +312,20 @@ footer {
 
  
 	/* Small Devices, Tablets */
+
+
+	@media only screen and (max-width : 768px){
+
+		.navbar{
+			background: #D45C46;
+			padding: 10px 0 10px 0;
+		}
+
+		.navbar #logo{
+			padding: 5px 0px 0 10px;
+		}
+	}
+
 	@media only screen and (min-width : 768px){
  
   		h1.jumbo{
@@ -293,6 +333,18 @@ footer {
 		   	font-size: 3.5vw ;
 
 		}
+
+
+		.navbar{
+			background: #D45C46;
+			padding: 10px;
+		}
+
+		#logo{
+  			width: 7em;
+ 			padding: 7px 0 0 0;
+  		}
+
 
 		.jumbotron {
 			height: 400px;
@@ -305,9 +357,8 @@ footer {
 			max-width: 100%;
 		}
 
-		#logo{
- 			width: 18vw;
- 		}
+		
+ 	
  
 	}
  
@@ -324,9 +375,7 @@ footer {
 			max-height: 400px;
 		}
  
- 		#logo{
- 			width: 12vw;
- 		}
+ 		
 	}
 
 	/* Large Devices, Wide Screens */
