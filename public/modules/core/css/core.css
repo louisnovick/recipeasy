@@ -53,6 +53,12 @@ hr {
 	top: 20px
 }
 
+.jumbotron {
+	background-image: url("http://lorempixel.com/1920/400/food/");
+	max-height: 500px;
+	min-height: 200px;
+}
+
 span.letter-space{
 	display: inline;
 	margin-left: 3px;
@@ -224,7 +230,7 @@ hr.hidden{
 
 footer {
 	height: auto;
-	min-height: 210px;
+	min-height: 260px;
 	width: 100vw;
 	background: rgba(247,227,102,.3);
 	margin-top: 50px;
@@ -236,9 +242,13 @@ footer {
 	@media only screen and (min-width : 320px){
 
   		h1.jumbo{
-		   	top: 15vh; 
-		   	font-size: 5vw ;
+		   	top: 20vh; 
+		   	font-size: 6.5vw ;
 
+		}
+
+		.jumbotron {
+			max-height: 300px;
 		}
 
 		#logo{
@@ -252,15 +262,25 @@ footer {
 	@media only screen and (min-width : 480px){
 
 		h1.jumbo{
-		   	top:150px; 
-		   	font-size: 3.5vw ;
+		   	top:22vh; 
+		   	font-size: 6.5vw ;
 
+		}
+
+		.jumbotron {
+			height: 300px;
 		}
 
 		#logo{
  			width: 23vw;
  		}
  
+ 		.food-title {
+			background: rgba(247,227,102,.8);
+			padding: 10px 10px 10px 10px;
+			overflow: hidden;
+			max-width: 420px;
+		}
  
 	}
 
@@ -269,9 +289,20 @@ footer {
 	@media only screen and (min-width : 768px){
  
   		h1.jumbo{
-		   	top: 35vh; 
+		   	top: 23vh; 
 		   	font-size: 3.5vw ;
 
+		}
+
+		.jumbotron {
+			height: 400px;
+		}
+
+		.food-title {
+			background: rgba(247,227,102,.8);
+			padding: 10px 10px 10px 10px;
+			overflow: hidden;
+			max-width: 100%;
 		}
 
 		#logo{
@@ -283,10 +314,15 @@ footer {
 	/* Medium Devices, Desktops */
 	@media only screen and (min-width : 992px){
 		 h1.jumbo{
-		   	top: 40vh; 
+		   	top: 25vh; 
 		   	
 		}
 	}
+
+	.jumbotron {
+			height: 500px;
+			max-height: 400px;
+		}
  
  		#logo{
  			width: 12vw;
