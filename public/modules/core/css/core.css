@@ -1,5 +1,5 @@
 /* Colors ////
-/ Red: D45C46
+/ Red: D45C46|C65344
 / Footer green: CEFCB9
 / Goldish: F7E366
 / Tan: F9CE80
@@ -64,10 +64,21 @@ hr {
 }
 
 .jumbotron {
-	background-image: url("http://lorempixel.com/1920/400/food/");
-	max-height: 500px;
-	min-height: 200px;
+	background-image:
+	 linear-gradient(
+          rgba(0, 0, 0, 0.62),
+          rgba(0, 0, 0, 0.62)
+        ), 
+	 url(../img/food.jpg);
+	background-position: center center;
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: cover;
+  	padding-bottom: 0px; 
+	margin: -50px -20vw 25px -20vw;
 }
+
+ 
 
 span.letter-space{
 	display: inline;
@@ -75,13 +86,16 @@ span.letter-space{
 }
 
 .navbar{
-	background: #D45C46;
+	background: #D45C46!important;
 	-webkit-box-shadow: 0 5px 6px -6px #999;
        -moz-box-shadow: 0 5px 6px -6px #999;
             box-shadow: 0 5px 6px -6px #999;
 
 }
 
+span.icon-bar{
+	background-color: blue;
+}
 .h3-header{
 	margin-bottom: 50px;
 	margin-top: 50px;
@@ -102,6 +116,15 @@ span.letter-space{
 
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
 	border-color: #F7E366;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+
+
+	border-color:#C65344;
+}
+.navbar-inverse .navbar-toggle{
+	border-color: transparent!important;
 }
 
 
@@ -146,16 +169,7 @@ body.ng-cloak
 {
 	display: block;
 }
- 
-.jumbotron {
-	padding-bottom: 0px; 
-	margin: -50px -20vw 25px -20vw;
-	/*background:
-      linear-gradient(
-          rgba(0, 0, 0, 0.9), 
-          rgba(0, 0, 0, 0.9)
-        );*/
-}
+
 
 h1.jumbo{
 	color: #fff;
@@ -163,6 +177,10 @@ h1.jumbo{
    	left: 0; 
    	width: 100%; 
    	text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1.jumbo span{
+	display:block;
 }
 
 .food-title {
@@ -272,8 +290,8 @@ footer a:hover{
 	@media only screen and (min-width : 320px){
 
   		h1.jumbo{
-		   	top: 20vh; 
-		   	font-size: 6.5vw ;
+		   	top: 7em; 
+		   	font-size: 7vw ;
 
 		}
 
@@ -290,12 +308,10 @@ footer a:hover{
 
  /* Extra Small Devices, Phones */
 	@media only screen and (min-width : 480px){
-
 		h1.jumbo{
-		   	top:22vh; 
-		   	font-size: 6.5vw ;
-
+		   	top: 200px; 
 		}
+		
 
 		.jumbotron {
 			height: 300px;
@@ -324,12 +340,23 @@ footer a:hover{
 		.navbar #logo{
 			padding: 5px 0px 0 10px;
 		}
+
+	
 	}
 
+
+	@media only screen and (max-width : 840px){
+
+		.padding-Body{
+			margin:0 auto;
+			display: block;
+
+		}
+	}
 	@media only screen and (min-width : 768px){
  
   		h1.jumbo{
-		   	top: 23vh; 
+		   	top: 35vh; 
 		   	font-size: 3.5vw ;
 
 		}
@@ -365,7 +392,7 @@ footer a:hover{
 	/* Medium Devices, Desktops */
 	@media only screen and (min-width : 992px){
 		 h1.jumbo{
-		   	top: 25vh; 
+		   	top: 30vh; 
 		   	
 		}
 	}
@@ -380,5 +407,5 @@ footer a:hover{
 
 	/* Large Devices, Wide Screens */
 	@media only screen and (min-width : 1200px){
- 
+	
 	}
