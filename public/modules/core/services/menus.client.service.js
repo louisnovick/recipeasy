@@ -159,7 +159,6 @@ angular.module('core').service('Menus', [
 			// Return the menu object
 			return this.menus[menuId];
 		};
-
 		//Adding the topbar menu
 		this.addMenu('topbar');
 	}
