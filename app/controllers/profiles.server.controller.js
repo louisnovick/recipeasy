@@ -5,7 +5,7 @@
  */
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
-	Profile = mongoose.model('Profile'),
+	User = mongoose.model('User'),
 	_ = require('lodash');
 
 /**
@@ -73,7 +73,7 @@ exports.delete = function(req, res) {
  * List of Profiles
  */
 exports.list = function(req, res) { 
-	Profile.find().sort('-created').populate('user', 'displayName').exec(function(err, profiles) {
+	User.find().sort('-created').exec(function(err, profiles) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -88,7 +88,7 @@ exports.list = function(req, res) {
  * Profile middleware
  */
 exports.profileByID = function(req, res, next, id) { 
-	Profile.findById(id).populate('user', 'displayName').exec(function(err, profile) {
+	User.findById(id).populate('user', 'displayName').exec(function(err, profile) {
 		if (err) return next(err);
 		if (! profile) return next(new Error('Failed to load Profile ' + id));
 		req.profile = profile ;
