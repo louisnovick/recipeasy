@@ -1,17 +1,10 @@
 <section data-ng-controller="HomeController" data-ng-init="find()">
 	<div class="jumbotron text-center">
-		<img src="http://lorempixel.com/1840/500/food/" class="img-responsive" alt="Responsive image">
-		<h1 class="jumbo">Open Source Recipes For the Hungry</h1>
-	<!--
-		<div class="row">
-			<p class="lead">
-				This page is on public/modules/core/views/home.client.view.html
-			</p>
-		</div>
-	-->
+		<img class="img-responsive"  />
+		<h1 class="jumbo">Open Source Recipes <span>For the Hungry</span></h1>
 	</div>
 	<div class="section">
-		<div class="row">
+		<div class="row padding-Body">
 			<h2>Trending</h2>
 			<a data-ng-repeat="recipe in recipes | orderBy:'-score' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
 				<div class="col-sm-4">
@@ -21,8 +14,8 @@
 				</div>
 			</a>
 		</div>
-		<div class="row">
-			<h2>Latest</h2>
+		<div class="row padding-Body">
+			<h2>L<span class="letter-space">atest</span></h2>
 			<a data-ng-repeat="recipe in recipes | orderBy:'-created' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
 			<div class="col-sm-4">
 				<img src="{{recipe.image}}" class="img-responsive" alt="Responsive image">
