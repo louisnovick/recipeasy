@@ -1,0 +1,13 @@
+<section data-ng-controller="ProfilesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="profile.username"></h1>
+	</div>
+	<div>
+		<ul>
+			<li>Name: <span data-ng-bind="profile.firstName"></span>&nbsp;<span data-ng-bind="profile.lastName"></span></li>
+			<li>Gender: <span data-ng-bind="profile.gender"></span></li>
+			<li>Experience: <span data-ng-bind="profile.experience"></span></li>
+			<li>Joined: <span data-ng-bind="profile.created | date:'MM/dd/yyyy' "></span></li>
+		</ul>
+	</div>
+</section>

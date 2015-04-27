@@ -2,7 +2,7 @@
 
 module.exports = {
 	db: {
-		uri: 'mongodb://localhost/recipeasy',
+		uri: 'mongodb://localhost/recipeasydev',
 		options: {
 			user: '',
 			pass: ''

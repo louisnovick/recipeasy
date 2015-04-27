@@ -1,8 +1,8 @@
 'use strict';
 
 //note addition of $http
-angular.module('recipes').controller('RecipesController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Recipes',  
-	function($scope, $stateParams, $http, $location, Authentication, Recipes) {
+angular.module('recipes').controller('RecipesController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Recipes', 'Socket',  
+	function($scope, $stateParams, $http, $location, Authentication, Recipes, Socket) {
 	  $scope.authentication = Authentication;
 
 	  $scope.likes = 0;
@@ -113,4 +113,11 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 	    });
 
 	  };  
+
+	  Socket.on('recipe.created', function(recipe) {
+	    console.log(recipe);
+	    console.log(recipe.name);
+		//alert('New Recipe, ' + recipe.name + 'Added');
+		//res.redirect('/recipes');
+	  });
 }]);

@@ -54,6 +54,8 @@ exports.create = function(req, res) {
 			  			res.redirect('/#!/recipes/'+recipe._id); 
 					}
 				});
+				var socketio = req.app.get('socketio'); 
+				socketio.sockets.emit('recipe.created', recipe); 
 			}
 		});
 	};

@@ -1,0 +1,16 @@
+<section data-ng-controller="ProfilesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>All Chefs</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="profile in profiles" data-ng-href="#!/profiles/{{profile._id}}" class="list-group-item">
+            <h2 class="list-group-item-heading" data-ng-bind="profile.username"></h2>
+            <h4>Gender: <span data-ng-bind="profile.gender"></span></h4>
+            <h4>Experience: <span data-ng-bind="profile.experience"></span></h4>
+            <h5>Joined: <span data-ng-bind="profile.created | date:'MM/dd/yyyy' "></span></h5>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!profiles.$resolved || profiles.length">
+        No Profiles yet, why don't you <a href="/#!/profiles/create">create one</a>?
+    </div>
+</section>

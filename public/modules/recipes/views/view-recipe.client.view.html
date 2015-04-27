@@ -20,15 +20,9 @@
 				<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Bad</i></button>
 			</h2>
 		</div>
-		<div class="page-body" style="padding-bottom:400px;">
+		<div class="page-body">
 			<div class="image-in-recipe">
 				<image ng-src="{{recipe.image}}" class="img-responsive"/>
-				<p>
-					Added on
-						<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
-					by
-						<span data-ng-bind="recipe.user.displayName"></span>
-				</p>
 			</div>
 			
 			<p data-ng-bind="recipe.content"></p>
@@ -40,53 +34,33 @@
 			</p>
 		</div>
 
-		<div class="all-comments">
-			<h2>Comments</h2>
-			<div class="single-comments">
-				<div class="col-sm-3  col-md-offset-1">
-					<img src="http://www.placecage.com/gif/75/75" alt="Avatar">
-					<h4>Firstname Lastname</h4>
+			<section data-ng-controller="CommentsController" data-ng-init="find()">
+
+			<h3>Comments</h3>
+			<form name="commentForm" data-ng-submit="create()" data-ng-init="{{recipeId=recipe._id}}">
+				<input type="text" data-ng-model="commentbody"/>
+				<input type="submit" />
+			</form>
+			<hr>
+				<div class="list-group" data-ng-repeat="comment in comments" data-ng-show="{{comment.recipe===recipeId}}" >
+					<h5 class="list-group-item-heading" data-ng-bind="comment.commentbody"></h5>
+					
+					<small class="list-group-item-text">
+						Posted on
+						<span data-ng-bind="comment.created"></span>
+						by
+						<span data-ng-bind="comment.user.displayName"></span>
+						<div class="pull-right" data-ng-show="authentication.user._id == comment.user._id" data-ng-init={{}}>
+							<a href="/#!/comments/{{comment._id}}/edit">
+								<i class="glyphicon glyphicon-edit"></i>
+							</a>
+							<a data-ng-click="remove();">
+								<i class="glyphicon glyphicon-trash"></i>
+							</a>
+						</div>
+					</small>					
 				</div>
-				<div class="col-md-7">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-					</p>
-				</div>
-			</div>
-			<div class="single-comments">
-				<div class="col-sm-3 col-md-offset-1">
-					<img src="http://www.placecage.com/gif/75/75" alt="Avatar">
-					<h4>Firstname Lastname</h4>
-				</div>
-				<div class="col-md-7">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-					</p>
-				</div>
-			</div>
-			<div class="single-comments">
-				<div class="col-sm-3  col-md-offset-1">
-					<img src="http://www.placecage.com/gif/75/75" alt="Avatar">
-					<h4>Firstname Lastname</h4>
-				</div>
-				<div class="col-md-7">
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur.
-					</p>
-				</div>
-			</div>
+			</section>
 		</div>
 	</div>
 </section>
