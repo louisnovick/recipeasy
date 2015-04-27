@@ -23,6 +23,11 @@
 		<div class="page-body">
 			<div class="image-in-recipe">
 				<image ng-src="{{recipe.image}}" class="img-responsive"/>
+				<h4 class="text-center">Vote on This Recipe!</h4>
+				<div class="row voting">
+					<a href="#"><img class="thumb" src="modules/core/img/brand/thumbup.svg"></a>
+					<a href="#"><img class="thumb-down" src="modules/core/img/brand/thumbdown.svg"></a>
+				</div>
 			</div>
 			
 			<p data-ng-bind="recipe.content"></p>
@@ -34,6 +39,7 @@
 			</p>
 		</div>
 
+		<div class="all-comments">
 			<section data-ng-controller="CommentsController" data-ng-init="find()">
 
 			<h3>Comments</h3>
@@ -61,6 +67,7 @@
 					</small>					
 				</div>
 			</section>
+		</div>
 		</div>
 	</div>
 </section>

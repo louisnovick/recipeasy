@@ -247,7 +247,7 @@ hr.hidden{
 	left: 3%;
 	background-color: #FCFAF4;
 	height: auto;
-	min-height: 260px;
+	min-height: 100px;
 	border-radius: 2px;
 }
 
