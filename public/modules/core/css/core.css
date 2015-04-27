@@ -251,6 +251,9 @@ h2.score{
 	margin-bottom: 30px;
 }
 
+.fa-heart{
+	font-size: 0.7em!important;
+}
 /*Profile*/
 
 .all-comments {
