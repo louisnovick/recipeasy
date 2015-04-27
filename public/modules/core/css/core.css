@@ -35,6 +35,10 @@ a {
     transition: color  550ms ease-out;
 }
 
+.clearfix{
+	overflow: auto;
+	clear:both;
+}
 a:hover{
 	cursor: pointer;
 	color: black ;
@@ -52,7 +56,12 @@ ul {
 }
 
 hr {
+	border-top: 1px solid #efdfce;
+	border-bottom: 1px solid rgba(255,255,255,0.3);
 	clear: both;
+}
+.page-header{
+	border-bottom: 1px solid #efdfce;
 }
 
 .hidden {
@@ -175,6 +184,10 @@ h1.jumbo span{
 	display:block;
 }
 
+h2.score{
+
+}
+
 .food-title {
 	background: rgba(247,227,102,.8);
 	padding: 10px 10px 10px 10px;
@@ -232,11 +245,6 @@ h1.jumbo span{
 }
 
 /*Profile*/
-
-hr.hidden{
-	
-}
-
 
 .all-comments {
 	padding-top: 20px;

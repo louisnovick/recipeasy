@@ -13,32 +13,31 @@
 	</div>
 	<div>
 
-		<div>
-			<h2>
-				Score: <span data-ng-bind="recipe.score"></span>
-				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Good</i></button>
-				<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Bad</i></button>
-			</h2>
-		</div>
 		<div class="page-body">
 			<div class="image-in-recipe">
-				<image ng-src="{{recipe.image}}" class="img-responsive"/>
+				<image ng-src="{{recipe.image}}" style="width: 800px;" class="img-responsive"/>
 				<h4 class="text-center">Vote on This Recipe!</h4>
 				<div class="row voting">
-					<a href="#"><img class="thumb" src="modules/core/img/brand/thumbup.svg"></a>
-					<a href="#"><img class="thumb-down" src="modules/core/img/brand/thumbdown.svg"></a>
+					<a href="#"><img class="thumb" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id" src="modules/core/img/brand/thumbup.svg"></a>
+					<a href="#"><img class="thumb-down" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id" src="modules/core/img/brand/thumbdown.svg"></a>
 				</div>
 			</div>
 			
 			<p data-ng-bind="recipe.content"></p>
-			<p>
+			<em>
 			Added on
 				<span data-ng-bind="recipe.created | date:'mediumDate'"></span>
 			by
 				<span data-ng-bind="recipe.user.displayName"></span>
-			</p>
+			</em>
 		</div>
+		<div class="clearfix"></div>
 
+			<div>
+				<h2 class="score">
+				Score: <span data-ng-bind="recipe.score"></span>
+				</h2>
+			</div>
 			<section data-ng-controller="CommentsController" data-ng-init="find()">
 
 			<h3>Comments</h3>
@@ -46,6 +45,7 @@
 				<input type="text" data-ng-model="commentbody"/>
 				<input type="submit" />
 			</form>
+			
 			<hr>
 				<div class="list-group" data-ng-repeat="comment in comments" data-ng-show="{{comment.recipe===recipeId}}" >
 					<h5 class="list-group-item-heading" data-ng-bind="comment.commentbody"></h5>
