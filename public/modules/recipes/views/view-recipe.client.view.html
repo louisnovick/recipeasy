@@ -16,13 +16,22 @@
 		<div>
 			<h2>
 				Score: <span data-ng-bind="recipe.score"></span>
-				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Good</i></button>
-				<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Bad</i></button>
+				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><!--<i class="fa fa-heart">--><img src="modules/core/img/assets/thumbsup.svg"/><!--</i>--></button>
+				
+				<!--<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id">-->
+
+				<img src="modules/core/img/assets/thumbsdown.svg"/ class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><!--<i class="fa fa-heart">Bad</i></button>-->
 			</h2>
 		</div>
 		<div class="page-body">
 			<div class="image-in-recipe">
 				<image ng-src="{{recipe.image}}" class="img-responsive"/>
+				<h4 class="text-center">Vote on This Recipe!</h4>
+				<div class="row voting">
+					<a href="#"><img class="thumb" src="modules/core/img/brand/thumbup.svg"></a>
+					<a href="#"><img class="thumb-down" src="modules/core/img/brand/thumbdown.svg"></a>
+				</div>
+
 			</div>
 			
 			<p data-ng-bind="recipe.content"></p>
