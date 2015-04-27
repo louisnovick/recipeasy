@@ -23,7 +23,7 @@ angular.module('comments').controller('CommentsController', ['$scope', '$statePa
 
 			$scope.$apply();
 			this.commentbody = '';
-
+			$scope.comments = Comments.query();
 			/*Socket.on('comment.created', function(comment) {
 				console.log(comment);
 				alert('New Comment');
