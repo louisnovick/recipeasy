@@ -59,6 +59,7 @@ hr {
 	border-top: 1px solid #efdfce;
 	border-bottom: 1px solid rgba(255,255,255,0.3);
 	clear: both;
+	margin-top:10px;
 }
 .page-header{
 	border-bottom: 1px solid #efdfce;
@@ -93,6 +94,8 @@ span.letter-space{
 	display: inline;
 	margin-left: 3px;
 }
+
+
 
 /*Nav - Header*/
 #logo{
@@ -242,6 +245,10 @@ h2.score{
 .thumb-down {
 	float: right;
 	width: 65px;
+}
+
+.comments-bottom{
+	margin-bottom: 30px;
 }
 
 /*Profile*/
