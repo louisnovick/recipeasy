@@ -6,24 +6,24 @@
     -->
     </div>
     <div class="list-group">
-            <a data-ng-repeat="recipe in recipes" data-ng-href="#!/recipes/{{recipe._id}}" class="list-group-item col-sm-3 img-responsive">
-			<h4 class="list-group-item-heading" data-ng-bind="recipe.name"></h4>
+        <a data-ng-repeat="recipe in recipes" data-ng-href="#!/recipes/{{recipe._id}}" class="list-group-item col-sm-3 img-responsive">
+            <h4 class="list-group-item-heading" data-ng-bind="recipe.name"></h4>
             <medium class="list-group-item-text">
-				Added
+                Added
             <!--
                 on
-				<span data-ng-bind="recipe.created | date:'medium'"></span>
+                <span data-ng-bind="recipe.created | date:'medium'"></span>
             -->
-				by
-				<span data-ng-bind="recipe.user.displayName"></span>
+                by
+                <span data-ng-bind="recipe.user.displayName"></span>
                 <br/>
                 Score:
                 <span data-ng-bind="recipe.score"></span>
-			</medium>
-			<image src="{{recipe.image}}" style="max-width:100%" />
+            </medium>
+            <image src="{{recipe.image}}" style="max-width:100%" />
         </a>
     </div>
     <div class="alert alert-warning text-center" data-ng-hide="!recipes.$resolved || recipes.length">
-    	No Recipes yet, why don't you <a href="/#!/recipes/create">create one</a>?
+        No Recipes yet, why don't you <a href="/#!/recipes/create">create one</a>?
     </div>
 </section>

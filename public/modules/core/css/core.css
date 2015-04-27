@@ -181,8 +181,9 @@ h1.jumbo span{
 	overflow: hidden;
 }
 
-.list-group-item {
-	height: 230px;
+.list-group {
+	height: auto;
+	display: inline-block;
 }
 
 .image-in-recipe {
@@ -326,13 +327,6 @@ footer a:hover{
 		height: 300px;
 	}
  
- 	.food-title {
-		background: rgba(247,227,102,.8);
-		padding: 10px 10px 10px 10px;
-		overflow: hidden;
-		max-width: 420px;
-	}
- 
 }
 
  /* Small Devices, Tablets */
@@ -383,13 +377,6 @@ footer a:hover{
 
 	.jumbotron {
 		height: 400px;
-	}
-
-	.food-title {
-		background: rgba(247,227,102,.8);
-		padding: 10px 10px 10px 10px;
-		overflow: hidden;
-		max-width: 100%;
 	}
 
 	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{

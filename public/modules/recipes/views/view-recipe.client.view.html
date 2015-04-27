@@ -16,11 +16,8 @@
 		<div>
 			<h2>
 				Score: <span data-ng-bind="recipe.score"></span>
-				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><!--<i class="fa fa-heart">--><img src="modules/core/img/assets/thumbsup.svg"/><!--</i>--></button>
-				
-				<!--<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id">-->
-
-				<img src="modules/core/img/assets/thumbsdown.svg"/ class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><!--<i class="fa fa-heart">Bad</i></button>-->
+				<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Good</i></button>
+				<button class="btn btn-danger" ng-click="dislikeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id"><i class="fa fa-heart">Bad</i></button>
 			</h2>
 		</div>
 		<div class="page-body">
@@ -31,7 +28,6 @@
 					<a href="#"><img class="thumb" src="modules/core/img/brand/thumbup.svg"></a>
 					<a href="#"><img class="thumb-down" src="modules/core/img/brand/thumbdown.svg"></a>
 				</div>
-
 			</div>
 			
 			<p data-ng-bind="recipe.content"></p>
@@ -43,6 +39,7 @@
 			</p>
 		</div>
 
+		<div class="all-comments">
 			<section data-ng-controller="CommentsController" data-ng-init="find()">
 
 			<h3>Comments</h3>
@@ -70,6 +67,7 @@
 					</small>					
 				</div>
 			</section>
+		</div>
 		</div>
 	</div>
 </section>
