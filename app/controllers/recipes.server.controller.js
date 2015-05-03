@@ -26,8 +26,20 @@ exports.create = function(req, res) {
 	}  else
 		recipe.image='uploads/default.png';
 
+	//Finds the extension type of the uploaded image
+	var ext = req.files.image.extension.toLowerCase();
+
+	//Chooses the compression type based on extension type for minification
+	if (ext == 'png')
+		var compType = Imagemin.optipng({ optimizationLevel: 3 });
+	else if(ext == 'gif') 
+		var compType = Imagemin.gifsicle({ interlaced: true });
+	else
+		var compType = Imagemin.jpegtran({ progressive: true });
+
+
 	//Minifies the images uploaded so we save on load times
-	var imagemin = new Imagemin().src(imgPath).use(Imagemin.jpegtran({ progressive: true }));
+	var imagemin = new Imagemin().src(imgPath).use(compType);
 	imagemin.run(function(err, files) {        
 	  if (err) {             
 	    return next(err);        
