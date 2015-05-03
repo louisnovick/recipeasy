@@ -381,12 +381,12 @@ footer a:hover{
 
 	.navbar{
 		background: #D45C46;
-		padding: 10px 0 10px 0;
+		padding: 5px 0 0 0;
 	}
 
 	#logo{
-  		width: 7em;
- 		padding: 7px 0 0 0;
+  		width: 13rem;
+ 		padding: 5px 0 0 0;
   	}
 
 	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
@@ -410,6 +410,11 @@ footer a:hover{
 		top: 22vh; 
 		font-size: 5vw ;	   	
 	}
+
+	#logo{
+  		width: 12rem;
+ 		padding: 7px 0 0 0;
+  	}
 }
 
 
@@ -417,6 +422,11 @@ footer a:hover{
 @media only screen and (min-width : 1200px){
 	h1.jumbo{
 		top: 15vh; 	   	
+	}
+
+	.navbar{
+		background: #D45C46;
+		padding: 6px 0 6px 0;
 	}
 
 	.food-title {
