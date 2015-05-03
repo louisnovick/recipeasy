@@ -213,7 +213,7 @@ h2.score{
 	background: rgba(247,227,102,.9);
 	margin: 0px 0px;
 	padding: 10px 10px 10px 10px;
-	text-overflow: ellipsis;
+	overflow-x: hidden;
 }
 
 .list-recipes {
