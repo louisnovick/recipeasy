@@ -6,7 +6,8 @@
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
 	Recipe = mongoose.model('Recipe'),
-	_ = require('lodash');
+	_ = require('lodash'),
+	Imagemin = require('imagemin');
 
 /**
  * Create a Recipe
@@ -19,10 +20,24 @@ exports.create = function(req, res) {
 	recipe.user = req.user;
 	recipe.likes.push(req.user._id);
 	if(req.files.image) {
-		recipe.image =req.files.image.path.substring(7);
+		var imgPath = req.files.image.path.substring(7);
+		recipe.image = imgPath;
 		console.log(recipe.image);
 	}  else
-		recipe.image='default.jpg';
+		recipe.image='uploads/default.png';
+
+	//Minifies the images uploaded so we save on load times
+	var imagemin = new Imagemin().src(imgPath).use(Imagemin.jpegtran({ progressive: true }));
+	imagemin.run(function(err, files) {        
+	  if (err) {             
+	    return next(err);        
+	  }
+	  //Had to do for loop for files array, even though
+	  //there is only one, or it breaks
+	  for (var i = 0; i < files.length; i++) {
+		  recipe.image=files[i].path;
+	  } 		
+	});
 	
 	var makeId = function() {
 		//info for creating a unique identifier

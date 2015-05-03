@@ -23,7 +23,8 @@ var fs = require('fs'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
-	path = require('path');
+	path = require('path'),
+	Imagemin = require('imagemin');
 
 module.exports = function(db) {
 	// Initialize express app
