@@ -191,10 +191,29 @@ h2.score{
 
 }
 
-.food-title {
-	background: rgba(247,227,102,.8);
-	padding: 10px 10px 10px 10px;
+.home-category {
+	height: 200px;
 	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+.home-image {
+	overflow: hidden;
+}
+
+.home-image img {
+	width: 100%;
+	height: auto;
+}
+
+.food-title {
+	position: absolute;
+	top: 150px;
+	width: 360px;
+	background: rgba(247,227,102,.9);
+	margin: 0px 0px;
+	padding: 10px 10px 10px 10px;
+	text-overflow: ellipsis;
 }
 
 .list-recipes {
@@ -318,73 +337,51 @@ footer a:hover{
 }
 
  /* Extra Small Devices */
-@media only screen and (min-width : 320px){
+@media only screen and (max-width : 768px){
 	h1.jumbo{
-		top: 7em; 
-		font-size: 7vw ;
+		top: 20vh; 
+		font-size: 3rem ;
 
 	}
 
-	.jumbotron {
-		max-height: 300px;
-	}
 	#logo{
   		width: 7em;
  		padding: 7px 0 0 0;
   	}
-}
- 
-
-@media only screen and (min-width : 480px){
-	h1.jumbo{
-		top: 200px; 
-	}
 		
 
 	.jumbotron {
 		height: 300px;
 	}
  
+ 	.food-title {
+		width: 100%;
+	}
 }
 
  /* Small Devices, Tablets */
 
-@media only screen and (max-width : 768px){
+@media only screen and (min-width: 769px) and (max-width : 991px){
 
-	.navbar{
-		background: #D45C46;
-		padding: 10px 0 10px 0;
+	.padding-Body{
+		margin:0 auto;
+		display: block;
+	}
+
+
+  	h1.jumbo{
+		top: 27vh; 
+		font-size: 6vw;
+
 	}
 
 	.navbar #logo{
 		padding: 5px 0px 0 10px;
 	}
 
-	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
-		color: #FCF0E3;
-	}
-}
-
-
-@media only screen and (max-width : 840px){
-
-	.padding-Body{
-		margin:0 auto;
-		display: block;
-	}
-}
-@media only screen and (min-width : 768px){
-
-  	h1.jumbo{
-		top: 35vh; 
-		font-size: 3.5vw ;
-
-	}
-
-
 	.navbar{
 		background: #D45C46;
-		padding: 10px;
+		padding: 10px 0 10px 0;
 	}
 
 	#logo{
@@ -392,33 +389,44 @@ footer a:hover{
  		padding: 7px 0 0 0;
   	}
 
-
-	.jumbotron {
-		height: 400px;
-	}
-
 	.navbar-inverse .navbar-nav .open .dropdown-menu > li > a{
 		color: black;
 	}
- 
+
+
+	.food-title {
+		width: 210px;
+	}
 }
  
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px){
+
+	.food-title {
+		width: 294px;
+	}
+
 	h1.jumbo{
-		top: 30vh; 	   	
+		top: 22vh; 
+		font-size: 5vw ;	   	
 	}
 }
 
-	.jumbotron {
-		height: 500px;
-		max-height: 400px;
-	}
-}
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px){
-	
+	h1.jumbo{
+		top: 15vh; 	   	
+	}
+
+	.food-title {
+		width: 360px;
+	}
 
 
+}
+
+.jumbotron {
+	height: 500px;
+	max-height: 400px;
 }

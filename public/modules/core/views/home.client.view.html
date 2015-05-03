@@ -7,20 +7,25 @@
 		<div class="row padding-Body">
 			<h2>Trending</h2>
 			<a data-ng-repeat="recipe in recipes | orderBy:'-score' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
-				<div class="col-sm-4">
-						<img src="{{recipe.image}}" class="img-responsive" alt="Responsive image">
-						<p class="food-title">{{recipe.name}}</p>
+				<div class="col-sm-4 home-category">
+					<p class="food-title">{{recipe.name}}</p>
+					<div class="home-image">
+						<img src="{{recipe.image}}" alt="Responsive image">
 						<span class="badge">{{recipe.score}} <i class="fa fa-heart"></i></span>
+					</div>
 				</div>
 			</a>
 		</div>
 		<div class="row padding-Body">
 			<h2>L<span class="letter-space">atest</span></h2>
 			<a data-ng-repeat="recipe in recipes | orderBy:'-created' | limitTo: 3" data-ng-href="#!/recipes/{{recipe._id}}">
-			<div class="col-sm-4">
-				<img src="{{recipe.image}}" class="img-responsive" alt="Responsive image">
-				<p class="food-title">{{recipe.name}}</p>
-				<span class="badge">{{recipe.score}} <i class="fa fa-heart"></i></span>
+			<div class="col-sm-4 home-category">
+				
+				<div class="home-image">
+					<p class="food-title">{{recipe.name}}</p>
+					<img src="{{recipe.image}}" class="" alt="Responsive image">
+					<span class="badge">{{recipe.score}} <i class="fa fa-heart"></i></span>
+				</div>
 			</div>
 		</div>
 	</div>
