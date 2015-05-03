@@ -353,6 +353,12 @@ footer a:hover{
 	.jumbotron {
 		height: 300px;
 	}
+
+	.home-category {
+		position: relative;
+		left: 15px; 
+		margin-bottom: 40px
+	}
  
  	.food-title {
 		width: 100%;
