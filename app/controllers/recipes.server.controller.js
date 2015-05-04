@@ -23,7 +23,8 @@ exports.create = function(req, res) {
 		recipe.image = imgPath;
 		console.log(recipe.image);
 	}  else
-		recipe.image='uploads/default.png';
+
+		recipe.image='../modules/core/img/assets/noupload.png';
 
 	//Finds the extension type of the uploaded image
 	var ext = req.files.image.extension.toLowerCase();
