@@ -15,7 +15,7 @@
 
 		<div class="page-body">
 			<div class="image-in-recipe">
-				<image ng-src="{{recipe.image}}" style="width: 800px;" class="img-responsive"/>
+				<image ng-src="{{recipe.image}} " style="width: 800px;" class="img-responsive"/>
 				<h4 class="text-center" ng-hide="isLiked && authentication.user._id">Vote on This Recipe!</h4>
 				<div class="row voting">
 					<a href="#"><img class="thumb" ng-click="likeThis()" id="btn-like" data-id="{{ recipe.uniqueId }}" ng-hide="isLiked && authentication.user._id" src="modules/core/img/brand/thumbup.svg"></a>

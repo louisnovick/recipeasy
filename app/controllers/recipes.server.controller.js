@@ -22,7 +22,7 @@ exports.create = function(req, res) {
 		recipe.image =req.files.image.path.substring(7);
 		console.log(recipe.image);
 	}  else
-		recipe.image='default.jpg';
+		recipe.image='../modules/core/img/assets/noupload.png';
 	
 	var makeId = function() {
 		//info for creating a unique identifier
