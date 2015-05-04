@@ -8,7 +8,6 @@ var mongoose = require('mongoose'),
 	Recipe = mongoose.model('Recipe'),
 	_ = require('lodash'),
 	Imagemin = require('imagemin');
-
 /**
  * Create a Recipe
  */
@@ -50,6 +49,7 @@ exports.create = function(req, res) {
 		  recipe.image=files[i].path;
 	  } 		
 	});
+
 	
 	var makeId = function() {
 		//info for creating a unique identifier
@@ -81,8 +81,6 @@ exports.create = function(req, res) {
 			  			res.redirect('/#!/recipes/'+recipe._id); 
 					}
 				});
-				var socketio = req.app.get('socketio'); 
-				socketio.sockets.emit('recipe.created', recipe); 
 			}
 		});
 	};

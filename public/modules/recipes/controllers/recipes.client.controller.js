@@ -1,7 +1,7 @@
 'use strict';
 
 //note addition of $http
-angular.module('recipes').controller('RecipesController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Recipes', 'Socket',  
+angular.module('recipes').controller('RecipesController', ['$scope', '$stateParams', '$http', '$location', 'Authentication', 'Recipes', 'Socket', 'notify',  
 	function($scope, $stateParams, $http, $location, Authentication, Recipes, Socket) {
 	  $scope.authentication = Authentication;
 
@@ -25,6 +25,13 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 	    }, function(errorResponse) {
 		 $scope.error = errorResponse.data.message;
 	       });
+
+    	  Socket.on('recipe.created', function(recipe) {
+		    console.log(recipe);
+		    console.log(recipe.name);
+			//alert('New Recipe, ' + recipe.name + 'Added');
+			notify('New Recipe Added');
+		  });
             
 	  };
 
@@ -114,10 +121,6 @@ angular.module('recipes').controller('RecipesController', ['$scope', '$statePara
 
 	  };  
 
-	  Socket.on('recipe.created', function(recipe) {
-	    console.log(recipe);
-	    console.log(recipe.name);
-		//alert('New Recipe, ' + recipe.name + 'Added');
-		//res.redirect('/recipes');
-	  });
+
+
 }]);
